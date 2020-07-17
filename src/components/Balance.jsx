@@ -4,7 +4,6 @@ import { withConsumer } from '../context'
 const Balance = ({ context }) => {
   const unitCurrency = '$'
   const { income, expense, total } = context
-
   return (
     <section className='summary__container' data-js='js-summary'>
       <h2 className='summary__heading'>
