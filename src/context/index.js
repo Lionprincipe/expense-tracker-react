@@ -3,9 +3,8 @@ import { useTransactions } from '../costumHooks'
 export const Context = React.createContext()
 
 const Provider = ({ children }) => {
-  const { transactions, setTransactions } = useTransactions()
   return (
-    <Context.Provider value={{ transactions, setTransactions }}>
+    <Context.Provider value={{ ...useTransactions() }}>
       {children}
     </Context.Provider>
   )

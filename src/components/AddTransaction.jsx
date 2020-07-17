@@ -6,10 +6,7 @@ import EditTransaction from './EditTransaction'
 
 const AddTransaction = ({ context }) => {
   const { toggle, setToggle } = useToggle()
-  const { setTransactions, transactions } = context
-
-  const addTransaction = (transaction) =>
-    setTransactions([...transactions, transaction])
+  const { addTransaction } = context
 
   return (
     <section className='summary__container'>

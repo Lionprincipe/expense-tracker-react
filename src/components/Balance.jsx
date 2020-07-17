@@ -1,19 +1,10 @@
 import React from 'react'
 import { withConsumer } from '../context'
 
-const Balance = ({ text, value, context }) => {
+const Balance = ({ context }) => {
   const unitCurrency = '$'
-  const { transactions } = context
-  const { income, expense, total } = transactions.reduce(
-    ({ income, expense, total }, { amount }) => {
-      return {
-        income: amount > 0 ? income + amount : income,
-        expense: amount < 0 ? expense + amount : expense,
-        total: total + amount,
-      }
-    },
-    { income: 0, expense: 0, total: 0 }
-  )
+  const { income, expense, total } = context
+
   return (
     <section className='summary__container' data-js='js-summary'>
       <h2 className='summary__heading'>

@@ -3,11 +3,11 @@ import EditTransaction from './EditTransaction'
 import { useToggle } from '../costumHooks'
 import Button from './Button'
 
-const Transaction = ({ removeTransaction, label, amount, editTransaction }) => {
+const Transaction = ({ deleteTransaction, label, amount, editTransaction }) => {
   const { toggle, setToggle } = useToggle()
-  const onRemove = (e) => {
+  const onDelete = (e) => {
     e.stopPropagation()
-    removeTransaction()
+    deleteTransaction()
   }
   return (
     <div>
@@ -18,7 +18,7 @@ const Transaction = ({ removeTransaction, label, amount, editTransaction }) => {
        `}
         onClick={setToggle}
       >
-        <Button onClick={onRemove}></Button>
+        <Button onClick={onDelete}></Button>
         <span>{label || ''}</span>
         <span className='history_records__summary'>{amount || 0}</span>
       </div>
